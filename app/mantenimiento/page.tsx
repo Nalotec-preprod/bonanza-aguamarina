@@ -27,8 +27,16 @@ export default async function ManttoPage() {
       <SectionHeader>Mantenimiento</SectionHeader>
 
       <div>
+        <div className="my-4 flex items-center justify-center flex-col">
+          <label htmlFor="fecha">Consultar reporte de otra fecha: </label>
+          <input
+            type="date"
+            name="fecha"
+            className="border border-gray-300 py-1 0x-4 rounded-md"
+          />
+        </div>
         <p>
-          <b>Fecha: </b> {reporteMantto.fecha}
+          <b>Fecha reporte: </b> {reporteMantto.fecha}
         </p>
 
         {reporteMantto.mantos.map((item) => (
