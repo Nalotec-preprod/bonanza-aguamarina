@@ -8,7 +8,10 @@ export default function FuncionesAcordeon() {
 
   return (
     <div>
-      <button className="mx-auto text-center flex items-center justify-center gap-2">
+      <button
+        className="mx-auto text-center flex items-center justify-center gap-2"
+        onClick={() => setShowData(!showData)}
+      >
         <p>Funciones</p>
         {showData && <ChevronDown />}
       </button>
