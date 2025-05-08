@@ -67,12 +67,12 @@ export default function Navbar() {
           </SheetHeader>
           <div className="backdrop-blur-md h-full w-full border-transparent pt-8 px-2">
             <nav className="">
-              <ul className="text-bonanzagreen-800">
+              <ul className="text-bonanzagreen-700">
                 {navLinks.map((link) => (
                   <li className="w-full" key={link.name}>
                     <Link
                       href={link.url}
-                      className="block w-full py-4 border-b border-b-bonanzagreen-500 text-center uppercase"
+                      className="block w-full py-4 font-medium border-b border-b-bonanzagreen-300 text-center uppercase"
                       onClick={() => setShowMenu(false)}
                     >
                       {link.name}
