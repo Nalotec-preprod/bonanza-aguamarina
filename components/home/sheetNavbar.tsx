@@ -60,19 +60,19 @@ export default function Navbar() {
       </button>
 
       <Sheet open={showMenu} onOpenChange={setShowMenu}>
-        <SheetContent className="bg-navbar-overlay border-transparent rounded-l-lg overflow-hidden">
+        <SheetContent className="bg-navbar-clear-overlay border-transparent rounded-l-lg overflow-hidden">
           <SheetHeader className="hidden">
             <SheetTitle></SheetTitle>
             <SheetDescription></SheetDescription>
           </SheetHeader>
-          <div className="backdrop-blur-lg h-full w-full border-transparent pt-8 px-2">
+          <div className="backdrop-blur-md h-full w-full border-transparent pt-8 px-2">
             <nav className="">
-              <ul className="text-bonanzagreen-50">
+              <ul className="text-bonanzagreen-800">
                 {navLinks.map((link) => (
                   <li className="w-full" key={link.name}>
                     <Link
                       href={link.url}
-                      className="block w-full py-4 border-b border-b-gray-300 text-center uppercase"
+                      className="block w-full py-4 border-b border-b-bonanzagreen-500 text-center uppercase"
                       onClick={() => setShowMenu(false)}
                     >
                       {link.name}

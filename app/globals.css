@@ -22,6 +22,13 @@
     rgba(33, 86, 105, 0.8) 100% /* rgba(0, 0, 0, 0.7) 0%, */
       /* rgba(0, 0, 0, 0.7) 100% */
   );
+
+  --background-image-navbar-clear-overlay: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.85) 100% /* rgba(0, 0, 0, 0.7) 0%, */
+      /* rgba(0, 0, 0, 0.7) 100% */
+  );
 }
 
 /* :root { */
