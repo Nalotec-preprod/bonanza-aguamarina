@@ -52,21 +52,23 @@ export default async function HomePage() {
                 <p>Lunes a s&aacute;bado de 9 am a 5 pm</p>
               </div>
 
-              {/* <p>{contacto.nombre}</p> */}
-              <Link
-                href={`mailto:${contacto.email}`}
-                className="text-blue-500 my-2 font-medium underline flex items-center gap-2"
-              >
-                <Mail className="" />
-                {contacto.email}
-              </Link>
-              <Link
-                href={`tel:${contacto.phone}`}
-                className="text-blue-500 font-medium underline flex items-center gap-2"
-              >
-                <Phone />
-                {contacto.phone}
-              </Link>
+              {/* Botones de contacto  */}
+              <div className="mt-4 space-y-3">
+                <Link
+                  href={`mailto:${contacto.email}`}
+                  className="text-blue-500 font-medium underline flex items-center gap-2 border border-bonanzagreen-400 py-2 rounded-md px-4 shadow-md active:shadow-sm"
+                >
+                  <Mail className="" />
+                  {contacto.email}
+                </Link>
+                <Link
+                  href={`tel:${contacto.phone}`}
+                  className="text-blue-500 font-medium underline flex items-center gap-2 border border-bonanzagreen-400 py-2 rounded-md px-4 shadow-md active:shadow-sm"
+                >
+                  <Phone />
+                  {contacto.phone}
+                </Link>
+              </div>
             </div>
           ))}
 
