@@ -15,6 +15,13 @@
   --color-bonanzagreen-800: #215669;
   --color-bonanzagreen-900: #1f495a;
   --color-bonanzagreen-950: #0f2f3d;
+
+  --background-image-navbar-overlay: linear-gradient(
+    to bottom,
+    rgba(33, 86, 105, 0.8) 0%,
+    rgba(33, 86, 105, 0.8) 100% /* rgba(0, 0, 0, 0.7) 0%, */
+      /* rgba(0, 0, 0, 0.7) 100% */
+  );
 }
 
 /* :root { */

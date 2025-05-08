@@ -60,15 +60,14 @@ export default function Navbar() {
       </button>
 
       <Sheet open={showMenu} onOpenChange={setShowMenu}>
-        <SheetContent>
-          <SheetHeader>
+        <SheetContent className="bg-navbar-overlay border-transparent rounded-l-lg overflow-hidden">
+          <SheetHeader className="hidden">
             <SheetTitle></SheetTitle>
             <SheetDescription></SheetDescription>
           </SheetHeader>
-
-          <div>
+          <div className="backdrop-blur-lg h-full w-full border-transparent pt-8 px-2">
             <nav className="">
-              <ul className="">
+              <ul className="text-bonanzagreen-50">
                 {navLinks.map((link) => (
                   <li className="w-full" key={link.name}>
                     <Link
@@ -90,7 +89,7 @@ export default function Navbar() {
                       className="inline-block w-5"
                     />{" "}
                     <span
-                      className={`${orbitron.className} antialiased text-[#20387e]`}
+                      className={`${orbitron.className} antialiased font-semibold text-[#20387e]`}
                     >
                       nalotec
                     </span>
