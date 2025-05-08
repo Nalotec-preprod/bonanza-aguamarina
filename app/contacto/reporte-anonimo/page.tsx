@@ -71,7 +71,7 @@ export default function ReporteAnonimoPage() {
 
           <button
             type="submit"
-            className="text-sm bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 w-full font-medium px-6 py-1 text-white rounded-lg"
+            className="text-sm bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 w-full font-medium px-6 py-2 text-white rounded-lg"
           >
             Enviar
           </button>
@@ -90,7 +90,7 @@ export default function ReporteAnonimoPage() {
               setFormState({ status: "", message: "" });
               form.reset();
             }}
-            className="text-sm bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 w-full font-medium px-6 py-1 text-white rounded-lg"
+            className="text-sm bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 w-full font-medium px-6 py-2 text-white rounded-lg"
           >
             Enviar otro reporte
           </button>
