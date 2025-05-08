@@ -45,17 +45,24 @@ export default async function HomePage() {
                   className="object-cover object-center h-full w-full"
                 />
               </div>
+
+              {/* Horarios de atención  */}
+              <div className="text-sm">
+                <p>Atenci&oacute;n: </p>
+                <p>Lunes a s&aacute;bado de 9 am a 5 pm</p>
+              </div>
+
               {/* <p>{contacto.nombre}</p> */}
               <Link
                 href={`mailto:${contacto.email}`}
-                className="text-blue-500 font-medium underline flex justify-center items-center gap-2"
+                className="text-blue-500 my-2 font-medium underline flex items-center gap-2"
               >
                 <Mail className="" />
                 {contacto.email}
               </Link>
               <Link
                 href={`tel:${contacto.phone}`}
-                className="text-blue-500 font-medium underline  flex justify-center items-center gap-2"
+                className="text-blue-500 font-medium underline flex items-center gap-2"
               >
                 <Phone />
                 {contacto.phone}
