@@ -14,9 +14,9 @@ export default async function VigilanciaPage() {
           data.map((vigilante) => (
             <li
               key={vigilante.id}
-              className="rounded-lg shadow-lg w-full max-w-[95vw] border border-bonanzagreen-400 overflow-hidden"
+              className="rounded-lg py-4 shadow-lg w-full max-w-[95vw] border border-bonanzagreen-400 overflow-hidden"
             >
-              <div className="h-[300px] overflow-hidden">
+              <div className="h-[200px] w-[200px] overflow-hidden rounded-lg mx-auto">
                 <img
                   src={vigilante.photo}
                   alt="foto del vigilante en turno"

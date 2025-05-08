@@ -7,6 +7,8 @@ interface Props {
 
 export default function SectionHeader({ children }: Props) {
   return (
-    <h1 className="text-center text-xl font-bold uppercase my-4">{children}</h1>
+    <h1 className="text-center text-bonanzagreen-700 text-xl font-bold uppercase my-4">
+      {children}
+    </h1>
   );
 }

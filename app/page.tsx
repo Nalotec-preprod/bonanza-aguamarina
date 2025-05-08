@@ -20,7 +20,7 @@ const botones = [
   {
     id: "contacto-2",
     nombre: "Dudas, quejas o reportes",
-    url: "/contacto/sugerencias",
+    url: "/contacto/dudas-quejas-reportes",
   },
 ];
 
@@ -45,7 +45,7 @@ export default async function HomePage() {
                   className="object-cover object-center h-full w-full"
                 />
               </div>
-              <p>{contacto.nombre}</p>
+              {/* <p>{contacto.nombre}</p> */}
               <Link
                 href={`mailto:${contacto.email}`}
                 className="text-blue-500 font-medium underline flex justify-center items-center gap-2"
@@ -64,7 +64,9 @@ export default async function HomePage() {
           ))}
 
         {/* Acordeon Funciones  */}
-        <FuncionesAcordeon />
+        <div className="mt-6">
+          <FuncionesAcordeon />
+        </div>
       </div>
 
       {botones.map((boton) => (

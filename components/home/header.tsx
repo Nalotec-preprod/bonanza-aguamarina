@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "./sheetNavbar";
 
 export default function Header() {
@@ -9,11 +10,13 @@ export default function Header() {
     >
       {/* Logotipo del sitio  */}
       <div className="bg-white">
-        <img
-          src="/images/villas_bonanza.png"
-          alt="logotipo de villas bonanza"
-          className="h-14  "
-        />
+        <Link href="/">
+          <img
+            src="/images/villas_bonanza.png"
+            alt="logotipo de villas bonanza"
+            className="h-14  "
+          />
+        </Link>
       </div>
 
       <Navbar />

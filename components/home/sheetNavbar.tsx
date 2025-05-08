@@ -28,10 +28,10 @@ const navLinks = [
     name: "mantenimiento",
     url: "/mantenimiento",
   },
-  {
-    name: "contacto",
-    url: "/contacto",
-  },
+  // {
+  //   name: "contacto",
+  //   url: "/contacto",
+  // },
   {
     name: "reporte anonimo",
     url: "/contacto/reporte-anonimo",
