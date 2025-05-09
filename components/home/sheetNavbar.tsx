@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const navLinks = [
   {
-    name: "home",
+    name: "inicio",
     url: "/",
   },
   {
