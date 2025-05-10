@@ -4,12 +4,13 @@ import { insertDudaQuejaReporte } from "@/backend/actions/contacto/contactoActio
 import SectionHeader from "@/components/ui/headers/sectionHeader";
 import { QuejasSchema } from "@/schemas/contacto/quejas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CircleCheck } from "lucide-react";
-import { useState } from "react";
+import { CircleCheck, LoaderCircle } from "lucide-react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export default function SugerenciasPage() {
+  const [isPending, startTransition] = useTransition();
   const [formState, setFormState] = useState({
     status: "",
     message: "",
@@ -20,10 +21,11 @@ export default function SugerenciasPage() {
   });
 
   const onSubmit = async (data: z.infer<typeof QuejasSchema>) => {
-    console.log("Queja data: ", data);
-
-    const res = await insertDudaQuejaReporte(data);
-    setFormState(res);
+    startTransition(async () => {
+      console.log("Queja data: ", data);
+      const res = await insertDudaQuejaReporte(data);
+      setFormState(res);
+    });
   };
 
   return (
@@ -45,6 +47,7 @@ export default function SugerenciasPage() {
                 <input
                   {...form.register("nombre")}
                   type="text"
+                  disabled={isPending}
                   className="block px-2 w-full py-1 border border-bonanzagreen-500 rounded-md"
                 />
                 {form.formState.errors.nombre && (
@@ -59,6 +62,7 @@ export default function SugerenciasPage() {
                 <input
                   {...form.register("casa")}
                   type="text"
+                  disabled={isPending}
                   className="block px-2 w-full py-1 border border-bonanzagreen-500 rounded-md"
                 />
                 {form.formState.errors.casa && (
@@ -72,6 +76,7 @@ export default function SugerenciasPage() {
                 <label htmlFor="descripcion">Duda, queja o reporte: </label>
                 <textarea
                   {...form.register("descripcion")}
+                  disabled={isPending}
                   className="block h-32 px-2 py-1 w-full border border-bonanzagreen-500 rounded-md"
                 ></textarea>
                 {form.formState.errors.descripcion && (
@@ -83,9 +88,11 @@ export default function SugerenciasPage() {
 
               <button
                 type="submit"
+                disabled={isPending}
                 className="text-sm bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 w-full font-medium px-6 py-2 text-white rounded-lg"
               >
-                Enviar
+                {!isPending && "Enviar"}
+                {isPending && <LoaderCircle />}
               </button>
             </form>
           </div>
@@ -100,6 +107,7 @@ export default function SugerenciasPage() {
             </p>
             <button
               type="button"
+              disabled={isPending}
               onClick={() => {
                 setFormState({ status: "", message: "" });
                 form.reset();
