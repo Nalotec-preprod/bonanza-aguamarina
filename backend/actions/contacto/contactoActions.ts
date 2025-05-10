@@ -2,8 +2,8 @@
 
 import { ReporteAnonimoSchema } from "@/schemas/contacto/reporte-anonimo";
 import { z } from "zod";
-import { createSupabaseClient } from "../supabaseClient";
 import { QuejasSchema } from "@/schemas/contacto/quejas";
+import { createClient } from "@/utils/supabase/client";
 
 /**
  * Funcion que ingresa un registro en la tabla de
@@ -12,8 +12,8 @@ import { QuejasSchema } from "@/schemas/contacto/quejas";
 export const insertReporteAnonimo = async (
   data: z.infer<typeof ReporteAnonimoSchema>,
 ) => {
-  const supabase = createSupabaseClient();
-  const { error } = await supabase.from("reporte-anonimo").insert(data);
+  const supabase = createClient();
+  const { error } = await supabase.from("reporte_anonimo").insert(data);
 
   if (error) {
     console.log("Error recibido");
@@ -38,8 +38,8 @@ export const insertReporteAnonimo = async (
 export const insertDudaQuejaReporte = async (
   data: z.infer<typeof QuejasSchema>,
 ) => {
-  const supabase = createSupabaseClient();
-  const { error } = await supabase.from("dudas-quejas-reportes").insert(data);
+  const supabase = createClient();
+  const { error } = await supabase.from("dudas_quejas_reportes").insert(data);
 
   if (error) {
     console.log("Error recibido");
@@ -55,4 +55,14 @@ export const insertDudaQuejaReporte = async (
       message: "Se ha enviado el reporte",
     };
   }
+};
+
+/**
+ * Obtiene los datos de contacto de la administracion
+ */
+export const getAdminContactData = async () => {
+  const supabase = createClient();
+  const { data } = await supabase.from("admin_contact_data").select();
+  console.log("Data: ", data);
+  return data;
 };

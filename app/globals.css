@@ -16,6 +16,18 @@
   --color-bonanzagreen-900: #1f495a;
   --color-bonanzagreen-950: #0f2f3d;
 
+  --color-aquamarine-50: #ebfef6;
+  --color-aquamarine-100: #cefde8;
+  --color-aquamarine-200: #a1f9d5;
+  --color-aquamarine-300: #66f1c2;
+  --color-aquamarine-400: #27e0a7;
+  --color-aquamarine-500: #02c792;
+  --color-aquamarine-600: #00a276;
+  --color-aquamarine-700: #008163;
+  --color-aquamarine-800: #00664f;
+  --color-aquamarine-900: #005443;
+  --color-aquamarine-950: #002f27;
+
   --background-image-navbar-overlay: linear-gradient(
     to bottom,
     rgba(33, 86, 105, 0.8) 0%,
