@@ -1,5 +1,6 @@
 import { getAdminContactData } from "@/backend/actions/contacto/contactoActions";
 import FuncionesAcordeon from "@/components/home/funcionesAcordeon";
+import { Button } from "@/components/ui/button";
 import { ChevronRight, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -78,14 +79,19 @@ export default async function HomePage() {
       </div>
 
       {botones.map((boton) => (
-        <Link
+        <Button
+          variant="bonanzaPrimary"
           key={boton.id}
-          href={boton.url}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium shadow-md bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 text-white"
+          className="w-full justify-start"
         >
-          <p>{boton.nombre}</p>
-          <ChevronRight className="" />
-        </Link>
+          <Link
+            href={boton.url}
+            className="flex items-center gap-2 px-4 py-2 w-full h-full"
+          >
+            <p>{boton.nombre}</p>
+            <ChevronRight className="" />
+          </Link>
+        </Button>
       ))}
     </div>
   );

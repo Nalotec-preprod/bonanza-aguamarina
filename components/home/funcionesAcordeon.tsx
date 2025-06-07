@@ -1,7 +1,12 @@
 "use client";
 
-import { ChevronDown, ChevronRight, CircleCheck } from "lucide-react";
-import { useState } from "react";
+import { CircleCheck } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 const funciones = [
   {
@@ -24,21 +29,17 @@ const funciones = [
 ];
 
 export default function FuncionesAcordeon() {
-  const [showData, setShowData] = useState(false);
-
   return (
-    <div className="rounded-lg bg-bonanzagreen-100 text-bonanzagreen-800">
-      <button
-        className="mx-auto font-medium text-center py-2 w-full flex items-center justify-center gap-2 text-bonanzagreen-800"
-        onClick={() => setShowData(!showData)}
-      >
-        <p>Ver funciones</p>
-        {showData && <ChevronDown />}
-        {!showData && <ChevronRight />}
-      </button>
-
-      {showData && (
-        <div className="border-t px-4 border-t-bonanzagreen-200 mt-2 py-4 text-sm">
+    <Accordion
+      collapsible
+      type="single"
+      className="bg-bonanzagreen-100 text-bonanzagreen-800 px-4 py-1 rounded-md shadow-md transform transition-all ease-in-out duration-300"
+    >
+      <AccordionItem value="funciones">
+        <AccordionTrigger className="flex justify-center text-lg font-medium py-2 gap-2 items-center">
+          Funciones
+        </AccordionTrigger>
+        <AccordionContent>
           <ul className="text-left space-y-2">
             {funciones.map((funcion) => (
               <li key={funcion.id} className="flex items-start gap-2 text-left">
@@ -47,8 +48,8 @@ export default function FuncionesAcordeon() {
               </li>
             ))}
           </ul>
-        </div>
-      )}
-    </div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   );
 }

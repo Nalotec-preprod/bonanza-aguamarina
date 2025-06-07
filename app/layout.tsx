@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased pb-32`}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
-          <main className="mt-20">{children}</main>
+          <main className="mt-20 px-2 text-sm">{children}</main>
         </ThemeProvider>
       </body>
     </html>
