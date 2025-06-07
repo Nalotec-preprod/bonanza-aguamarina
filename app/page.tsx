@@ -1,5 +1,6 @@
 import { getAdminContactData } from "@/backend/actions/contacto/contactoActions";
 import FuncionesAcordeon from "@/components/home/funcionesAcordeon";
+import LinkBonanza from "@/components/ui/links/bonanzaLink";
 import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -78,18 +79,12 @@ export default async function HomePage() {
       </div>
 
       <div className="w-full p-1 inline-flex items-center justify-center gap-4">
-        <Link
-          href="/signin"
-          className="text-center font-medium py-2 rounded-lg shadow-md bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 text-white w-full"
-        >
+        <LinkBonanza href="/signin" variant="btnPrimaryLink">
           Ingresar
-        </Link>
-        <Link
-          href="/signup"
-          className="text-center font-medium py-2 rounded-lg shadow-md bg-gradient-to-b from-bonanzagreen-500 to-bonanzagreen-800 text-white w-full"
-        >
+        </LinkBonanza>
+        <LinkBonanza href="/signup" variant="btnPrimaryLink">
           Registrarse
-        </Link>
+        </LinkBonanza>
       </div>
     </main>
   );
