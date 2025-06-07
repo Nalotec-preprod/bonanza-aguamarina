@@ -36,7 +36,7 @@ export default function FuncionesAcordeon() {
       className="bg-bonanzagreen-100 text-bonanzagreen-800 px-4 py-1 rounded-md shadow-md transform transition-all ease-in-out duration-300"
     >
       <AccordionItem value="funciones">
-        <AccordionTrigger className="flex justify-center text-lg font-medium py-2 gap-2 items-center">
+        <AccordionTrigger className="flex justify-center text-base font-medium py-2 gap-2 items-center">
           Funciones
         </AccordionTrigger>
         <AccordionContent>

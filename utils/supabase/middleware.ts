@@ -11,6 +11,8 @@ const publicRoutes = [
   "/mantenimiento",
   "/contacto/reporte-anonimo",
   "/contacto/dudas-quejas-reportes",
+  "/signin",
+  "/signup",
 ];
 
 export async function updateSession(request: NextRequest) {
@@ -57,7 +59,7 @@ export async function updateSession(request: NextRequest) {
   if (!user && !publicRoutes.includes(request.nextUrl.pathname)) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/signin";
     return NextResponse.redirect(url);
   }
 
