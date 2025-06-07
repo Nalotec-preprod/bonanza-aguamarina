@@ -43,18 +43,19 @@ export default function RegisterForm() {
           return;
         }
 
-        const { data: { user } } = await supabase.auth.getUser();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
         if (user) {
-          await supabase
-            .from('profiles')
-            .insert({
-              id: user.id,
-              name: data.name,
-            });
+          await supabase.from("profiles").insert({
+            id: user.id,
+            name: data.name,
+          });
         }
 
-        router.push('/auth/login');
+        router.push("/auth/login");
       } catch (error) {
+        console.log("Error: ", error);
         setError("Error al registrarse. Por favor, intenta nuevamente.");
       }
     });
@@ -91,7 +92,9 @@ export default function RegisterForm() {
           <Label>Confirmar contraseña: </Label>
           <Input type="password" {...form.register("confirmPassword")} />
           {form.formState.errors.confirmPassword && (
-            <InputError>{form.formState.errors.confirmPassword.message}</InputError>
+            <InputError>
+              {form.formState.errors.confirmPassword.message}
+            </InputError>
           )}
         </div>
 
@@ -104,11 +107,7 @@ export default function RegisterForm() {
           Registrarse
         </Button>
       </form>
-      {error && (
-        <div className="text-red-500 text-sm mt-2">
-          {error}
-        </div>
-      )}
+      {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
     </div>
   );
 }

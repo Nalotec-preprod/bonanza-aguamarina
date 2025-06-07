@@ -5,7 +5,7 @@ import LoginForm from "./loginForm";
 import RegisterForm from "./registerForm";
 import GoogleAuthBtn from "./googleAuth";
 import { Button } from "@/components/ui/button";
-import { logOut } from "@/backend/actions/auth/login";
+// import { logOut } from "@/backend/actions/auth/login";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -20,12 +20,8 @@ export default function LoginPage() {
         {showLogin ? "Ingreso de usuarios" : "Registro de usuarios"}
       </h1>
       <GoogleAuthBtn />
-      
-      {showLogin ? (
-        <LoginForm />
-      ) : (
-        <RegisterForm />
-      )}
+
+      {showLogin ? <LoginForm /> : <RegisterForm />}
 
       <div className="text-center mt-4">
         <Button
@@ -33,7 +29,9 @@ export default function LoginPage() {
           onClick={() => setShowLogin(!showLogin)}
           className="text-bonanzagreen-500 hover:text-bonanzagreen-600"
         >
-          {showLogin ? "¿No tienes cuenta? Regístrate" : "¿Ya tienes cuenta? Inicia sesión"}
+          {showLogin
+            ? "¿No tienes cuenta? Regístrate"
+            : "¿Ya tienes cuenta? Inicia sesión"}
         </Button>
       </div>
 

@@ -36,8 +36,9 @@ export default function LoginForm() {
           return;
         }
 
-        router.push('/'); // Redirigir al usuario a la página principal después de iniciar sesión
+        router.push("/"); // Redirigir al usuario a la página principal después de iniciar sesión
       } catch (error) {
+        console.log("error: ", error);
         setError("Error al iniciar sesión. Por favor, intenta nuevamente.");
       }
     });
@@ -70,11 +71,7 @@ export default function LoginForm() {
         >
           Ingresar
         </Button>
-        {error && (
-          <div className="text-red-500 text-sm mt-2">
-            {error}
-          </div>
-        )}
+        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
       </form>
     </div>
   );
